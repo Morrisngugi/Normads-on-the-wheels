@@ -121,6 +121,23 @@ a {
     color: var(--savanna-gold);
 }
 
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dusty-tan);
+    margin: 3px 0;
+    transition: var(--transition-base);
+    border-radius: 2px;
+}
+
 /* --- Hero Section --- */
 .hero {
     position: relative;
@@ -514,10 +531,61 @@ a {
 }
 
 /* --- Responsive Design --- */
+/* Tablet styles */
+@media (max-width: 1024px) {
+    .nav-container {
+        max-width: 100%;
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .journey-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .card-content {
+        padding: var(--spacing-md);
+    }
+    
+    .card-button, .cta-button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        min-height: 44px; /* Touch-friendly */
+    }
+}
+
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
     .nav-menu {
+        position: fixed;
+        top: 65px;
+        left: -100%;
+        width: 100%;
+        background-color: var(--safari-green);
         flex-direction: column;
-        gap: var(--spacing-xs);
+        gap: 0;
+        padding: var(--spacing-md) 0;
+        transition: left 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .nav-menu a {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-sm);
     }
     
     .hero-title {
@@ -530,10 +598,17 @@ a {
     
     .philosophy-container {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
     
     .journey-cards {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .card {
+        max-width: 500px;
+        margin: 0 auto;
     }
     
     .section-title {
@@ -542,6 +617,7 @@ a {
     
     .footer-content {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 }
 
@@ -556,15 +632,40 @@ a {
     }
     
     .logo img {
-        width: 250px;
-        height: 50px;
+        width: 180px;
+        height: auto;
     }
     
-    .logo-text {
-        font-size: 1.2rem;
+    .nav-menu {
+        top: 55px;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-button {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .card-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .contact-container {
+        padding: 0 var(--spacing-sm);
     }
 }

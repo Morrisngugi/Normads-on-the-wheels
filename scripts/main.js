@@ -7,11 +7,42 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Nomads on Wheels - Site Loaded');
     
     // Initialize all interactive features
+    initMobileMenu();
     initSmoothScrolling();
     initFormValidation();
     initNavbarBehavior();
     
 });
+
+// ===============================================
+// MOBILE HAMBURGER MENU
+// ===============================================
+function initMobileMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    if (hamburger && navMenu) {
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+}
 
 // ===============================================
 // SMOOTH SCROLLING FOR NAVIGATION LINKS
