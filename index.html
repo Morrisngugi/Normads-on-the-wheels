@@ -30,16 +30,66 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-video">
-            <video autoplay muted loop playsinline poster="assets/images/WhatsApp Image 2026-01-03 at 5.46.21 PM.jpeg">
-                <source src="assets/videos/kenya-safari.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <h1 class="hero-title">Journey Beyond the Ordinary</h1>
-            <p class="hero-subtitle">Experience Kenya's wild heart through authentic adventures crafted for the curious traveler</p>
-            <a href="#journeys" class="cta-button">Explore Our Journeys</a>
+        <div class="carousel">
+            <!-- Slide 1 -->
+            <div class="carousel-slide active">
+                <div class="hero-image" style="background-image: url('assets/images/corouselimage2.jpeg');"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Journey Beyond the Ordinary</h1>
+                    <p class="hero-subtitle">Experience Kenya's wild heart through authentic adventures</p>
+                    <a href="#journeys" class="cta-button">Explore Our Journeys</a>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+                <div class="hero-image" style="background-image: url('assets/images/Safari.jpeg');"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Witness Wildlife in Action</h1>
+                    <p class="hero-subtitle">Track the Big Five across Kenya's iconic reserves</p>
+                    <a href="#journeys" class="cta-button">Explore Safari Expeditions</a>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+                <div class="hero-image" style="background-image: url('assets/images/WhatsApp Image 2026-01-03 at 5.50.23 PM (1).jpeg');"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Embrace Local Culture</h1>
+                    <p class="hero-subtitle">Connect with Kenya's vibrant communities and traditions</p>
+                    <a href="#journeys" class="cta-button">Discover Cultural Experiences</a>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+                <div class="hero-image" style="background-image: url('assets/images/WhatsApp Image 2026-01-03 at 5.50.23 PM.jpeg');"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Conquer Untamed Terrain</h1>
+                    <p class="hero-subtitle">Navigate Kenya's rugged highlands and remote wilderness</p>
+                    <a href="#journeys" class="cta-button">Start Your Adventure</a>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="carousel-btn carousel-btn-prev" id="prevBtn">
+                <span>&#10094;</span>
+            </button>
+            <button class="carousel-btn carousel-btn-next" id="nextBtn">
+                <span>&#10095;</span>
+            </button>
+            
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
         </div>
     </section>
 
