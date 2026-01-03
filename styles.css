@@ -738,8 +738,8 @@ a {
     }
     
     .logo img {
-        width: 180px;
-        height: auto;
+        height: 50px;
+        width: auto;
     }
     
     .nav-menu {

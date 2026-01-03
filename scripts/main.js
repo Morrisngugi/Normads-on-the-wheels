@@ -59,9 +59,9 @@ function initCarousel() {
         showSlide(currentSlide - 1);
     }
     
-    // Auto slide every 5 seconds
+    // Auto slide every 8 seconds
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
+        autoSlideInterval = setInterval(nextSlide, 8000);
     }
     
     function stopAutoSlide() {
