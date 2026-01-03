@@ -19,9 +19,9 @@
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2.5rem;
+    --spacing-xl: 3.5rem;
     
     /* Transitions */
     --transition-base: all 0.3s ease;
@@ -207,7 +207,7 @@ a {
 
 /* --- Philosophy Section --- */
 .philosophy {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
     background-color: var(--dusty-tan);
 }
 
@@ -216,7 +216,7 @@ a {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     align-items: center;
 }
 
@@ -250,7 +250,7 @@ a {
 
 /* --- Journeys Section --- */
 .journeys {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
     background: linear-gradient(
         to bottom,
         var(--sky-blue),
@@ -365,7 +365,7 @@ a {
 
 /* --- Contact Section --- */
 .contact {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-lg) var(--spacing-md);
     background-color: var(--dusty-tan);
 }
 
