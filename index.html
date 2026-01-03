@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nomads on Wheels - Experience the authentic spirit of Kenya through curated safari adventures, cultural immersion, and off-road expeditions.">
+    <title>Nomads on Wheels | Authentic Kenyan Safari Adventures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/logo.jpeg" alt="Nomads on Wheels Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#journeys">Journeys</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline poster="assets/images/kenya-safari-poster.jpg">
+                <source src="assets/videos/kenya-safari.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Journey Beyond the Ordinary</h1>
+            <p class="hero-subtitle">Experience Kenya's wild heart through authentic adventures crafted for the curious traveler</p>
+            <button class="cta-button">Explore Our Journeys</button>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="philosophy-container">
+            <div class="philosophy-text">
+                <h2>Our Philosophy</h2>
+                <p class="section-intro">We believe travel should be more than a checklist of destinations.</p>
+                <p>At Nomads on Wheels, we craft experiences that connect you with the raw beauty of Kenya's landscapes and the warmth of its people. Our journeys are designed for travelers who seek authenticity over luxury, adventure over comfort, and stories over souvenirs.</p>
+                <p>We are stewards of Kenya's natural heritage, committed to sustainable tourism that benefits local communities while preserving the wild places we love.</p>
+            </div>
+            <div class="philosophy-image">
+                <img src="assets/images/philosophy-image.jpg" alt="Kenyan landscape at sunset">
+            </div>
+        </div>
+    </section>
+
+    <!-- Journeys Section -->
+    <section id="journeys" class="journeys">
+        <div class="journeys-container">
+            <h2 class="section-title">Our Journeys</h2>
+            <p class="section-intro">Choose your path into the heart of Kenya</p>
+            
+            <div class="journey-cards">
+                <!-- Safari Journey Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/images/journey-safari.jpg" alt="Safari wildlife adventure">
+                    </div>
+                    <div class="card-content">
+                        <h3>Safari Expeditions</h3>
+                        <p>Witness the Great Migration, track the Big Five, and camp under star-filled skies in Kenya's most iconic national parks and reserves.</p>
+                        <ul class="card-features">
+                            <li>Masai Mara Game Reserve</li>
+                            <li>Amboseli National Park</li>
+                            <li>Tsavo East & West</li>
+                            <li>Expert wildlife guides</li>
+                        </ul>
+                        <button class="card-button">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Cultural Journey Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/images/journey-culture.jpg" alt="Cultural immersion with local communities">
+                    </div>
+                    <div class="card-content">
+                        <h3>Cultural Immersion</h3>
+                        <p>Connect with Kenya's diverse communities, from Maasai warriors to coastal Swahili culture, through meaningful exchanges and homestays.</p>
+                        <ul class="card-features">
+                            <li>Maasai village visits</li>
+                            <li>Traditional craft workshops</li>
+                            <li>Local cuisine experiences</li>
+                            <li>Storytelling evenings</li>
+                        </ul>
+                        <button class="card-button">Learn More</button>
+                    </div>
+                </div>
+
+                <!-- Off-Road Journey Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="assets/images/journey-offroad.jpg" alt="Off-road adventure through rugged terrain">
+                    </div>
+                    <div class="card-content">
+                        <h3>Off-Road Adventures</h3>
+                        <p>Navigate rugged terrain in 4x4 vehicles, discovering hidden valleys, remote highlands, and untouched wilderness areas.</p>
+                        <ul class="card-features">
+                            <li>Great Rift Valley exploration</li>
+                            <li>Mount Kenya foothills</li>
+                            <li>Northern frontier trails</li>
+                            <li>Desert & highland crossings</li>
+                        </ul>
+                        <button class="card-button">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Start Your Journey</h2>
+            <p class="section-intro">Let's plan your authentic Kenyan adventure</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="journey">Interested In</label>
+                    <select id="journey" name="journey">
+                        <option value="">Select a journey type</option>
+                        <option value="safari">Safari Expeditions</option>
+                        <option value="cultural">Cultural Immersion</option>
+                        <option value="offroad">Off-Road Adventures</option>
+                        <option value="custom">Custom Journey</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us about your dream adventure</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="assets/images/logo.jpeg" alt="Nomads on Wheels Logo">
+            </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#philosophy">Philosophy</a></li>
+                        <li><a href="#journeys">Journeys</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@nomadsonwheels.com</p>
+                    <p>Phone: +254 XXX XXX XXX</p>
+                    <p>Nairobi, Kenya</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nomads on Wheels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
