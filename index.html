@@ -14,15 +14,20 @@
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
     
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">
+            <a href="#home" class="logo" aria-label="Nomads on Wheels Home">
                 <img src="assets/images/logo.jpeg" alt="Nomads on Wheels Logo">
-            </div>
+            </a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -39,8 +44,9 @@
     </nav>
 
     <!-- Hero Section -->
+    <main id="main-content">
     <section id="home" class="hero">
-        <div class="carousel">
+        <div class="carousel" role="region" aria-label="Image carousel" aria-live="polite">
             <!-- Slide 1 -->
             <div class="carousel-slide active">
                 <div class="hero-image" style="background-image: url('assets/images/corouselimage2.jpeg');"></div>
@@ -86,26 +92,26 @@
             </div>
             
             <!-- Navigation Arrows -->
-            <button class="carousel-btn carousel-btn-prev" id="prevBtn">
-                <span>&#10094;</span>
+            <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
+                <span aria-hidden="true">&#10094;</span>
             </button>
-            <button class="carousel-btn carousel-btn-next" id="nextBtn">
-                <span>&#10095;</span>
+            <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next slide">
+                <span aria-hidden="true">&#10095;</span>
             </button>
             
             <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
-                <span class="indicator" data-slide="3"></span>
+            <div class="carousel-indicators" role="tablist" aria-label="Carousel navigation">
+                <button class="indicator active" data-slide="0" role="tab" aria-label="Slide 1" aria-selected="true"></button>
+                <button class="indicator" data-slide="1" role="tab" aria-label="Slide 2" aria-selected="false"></button>
+                <button class="indicator" data-slide="2" role="tab" aria-label="Slide 3" aria-selected="false"></button>
+                <button class="indicator" data-slide="3" role="tab" aria-label="Slide 4" aria-selected="false"></button>
             </div>
         </div>
     </section>
 
     <!-- Philosophy Section -->
     <section id="philosophy" class="philosophy">
-        <div class="philosophy-container">
+        <article class="philosophy-container">
             <div class="philosophy-text">
                 <h2>Our Philosophy</h2>
                 <p class="section-intro">We believe travel should be more than a checklist of destinations.</p>
@@ -113,9 +119,9 @@
                 <p>We are stewards of Kenya's natural heritage, committed to sustainable tourism that benefits local communities while preserving the wild places we love.</p>
             </div>
             <div class="philosophy-image">
-                <img src="assets/images/kenyan.png" alt="Kenyan landscape at sunset">
+                <img src="assets/images/kenyan.png" alt="Kenyan landscape at sunset" loading="lazy">
             </div>
-        </div>
+        </article>
     </section>
 
     <!-- Services Section -->
@@ -137,7 +143,7 @@
                     </div>
                     <h3>Church Groups</h3>
                     <p>Spiritual retreats and fellowship trips designed for church communities seeking meaningful connections with nature and local culture.</p>
-                    <a href="#contact" class="service-link">Book Now →</a>
+                    <a href="#contact" class="service-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
 
                 <!-- Family Trips -->
@@ -150,7 +156,7 @@
                     </div>
                     <h3>Family Adventures</h3>
                     <p>Create unforgettable memories with customized family trips that cater to all ages, from toddlers to grandparents.</p>
-                    <a href="#contact" class="service-link">Book Now →</a>
+                    <a href="#contact" class="service-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
 
                 <!-- Personal Trips -->
@@ -164,7 +170,7 @@
                     </div>
                     <h3>Personal Journeys</h3>
                     <p>Solo adventures and couples getaways designed for self-discovery, romance, or personal reflection in Kenya's stunning landscapes.</p>
-                    <a href="#contact" class="service-link">Book Now →</a>
+                    <a href="#contact" class="service-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
 
                 <!-- Corporate/Team Building -->
@@ -177,7 +183,7 @@
                     </div>
                     <h3>Corporate Events</h3>
                     <p>Team-building experiences and corporate retreats that strengthen bonds while exploring Kenya's wilderness and culture.</p>
-                    <a href="#contact" class="service-link">Book Now →</a>
+                    <a href="#contact" class="service-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
 
                 <!-- Schools -->
@@ -190,7 +196,7 @@
                     </div>
                     <h3>Educational Tours</h3>
                     <p>Safe, supervised educational trips for schools that combine learning with adventure, perfect for field trips and study tours.</p>
-                    <a href="#contact" class="service-link">Book Now →</a>
+                    <a href="#contact" class="service-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
 
                 <!-- Custom Groups -->
@@ -204,7 +210,7 @@
                     </div>
                     <h3>Custom Group Bookings</h3>
                     <p>Tailored experiences for any group size or occasion - from birthdays to reunions, we create the perfect journey for you.</p>
-                    <a href="#contact" class="service-link">Book Now →</a>
+                    <a href="#contact" class="service-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
                 </div>
             </div>
         </div>
@@ -220,7 +226,7 @@
                 <!-- Safari Journey Card -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/Safari.jpeg" alt="Safari wildlife adventure">
+                        <img src="assets/images/Safari.jpeg" alt="Safari wildlife adventure" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3>Safari Expeditions</h3>
@@ -238,7 +244,7 @@
                 <!-- Cultural Journey Card -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/WhatsApp Image 2026-01-03 at 5.50.23 PM (1).jpeg" alt="Cultural immersion with local communities">
+                        <img src="assets/images/WhatsApp Image 2026-01-03 at 5.50.23 PM (1).jpeg" alt="Cultural immersion with local communities" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3>Cultural Immersion</h3>
@@ -256,7 +262,7 @@
                 <!-- Off-Road Journey Card -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="assets/images/WhatsApp Image 2026-01-03 at 5.50.23 PM.jpeg" alt="Off-road adventure through rugged terrain">
+                        <img src="assets/images/WhatsApp Image 2026-01-03 at 5.50.23 PM.jpeg" alt="Off-road adventure through rugged terrain" loading="lazy">
                     </div>
                     <div class="card-content">
                         <h3>Off-Road Adventures</h3>
@@ -302,19 +308,32 @@
                     <label for="message">Tell us about your dream adventure</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="cta-button">Send Inquiry</button>
+                <button type="submit" class="cta-button" id="submitBtn">
+                    <span class="btn-text">Send Inquiry</span>
+                    <span class="btn-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
+                </button>
+                <div class="form-message" id="formMessage"></div>
             </form>
         </div>
     </section>
 
+    </main>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
+            <!-- Centered Logo -->
             <div class="footer-logo">
-                <img src="assets/images/logo.jpeg" alt="Nomads on Wheels Logo">
+                <a href="#home" aria-label="Nomads on Wheels Home">
+                    <img src="assets/images/logo.jpeg" alt="Nomads on Wheels Logo">
+                </a>
             </div>
+            
             <div class="footer-content">
-                <div class="footer-section">
+                <!-- Horizontal Quick Links -->
+                <div class="footer-section footer-links">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -324,23 +343,34 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@nomadsonwheels.com</p>
-                    <p>Phone: +254 716 966 620</p>
-                    <p>Nairobi, Kenya</p>
+                
+                <!-- Centered Contact Us -->
+                <div class="footer-section footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> info@nomadsonwheels.com</p>
+                    <p><i class="fas fa-phone"></i> +254 716 966 620</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
                 </div>
-                <div class="footer-section">
+                
+                <!-- Follow Us Below Contact -->
+                <div class="footer-section footer-social">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook">Facebook</a>
-                        <a href="#" aria-label="Instagram">Instagram</a>
-                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="Facebook" title="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" title="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter" title="Follow us on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Nomads on Wheels. All rights reserved.</p>
+                <p><a href="#home" class="copyright-link">&copy; 2026 Nomads on Wheels. All rights reserved.</a></p>
             </div>
         </div>
     </footer>

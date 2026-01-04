@@ -28,12 +28,19 @@ function initCarousel() {
     
     let currentSlide = 0;
     let autoSlideInterval;
+    let isTransitioning = false;
     
     // Show specific slide
     function showSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
         // Remove active class from all slides and indicators
         slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
+        indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+            indicator.setAttribute('aria-selected', 'false');
+        });
         
         // Handle wrap around
         if (index >= slides.length) {
@@ -47,6 +54,12 @@ function initCarousel() {
         // Add active class to current slide and indicator
         slides[currentSlide].classList.add('active');
         indicators[currentSlide].classList.add('active');
+        indicators[currentSlide].setAttribute('aria-selected', 'true');
+        
+        // Allow next transition after animation completes
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 800);
     }
     
     // Next slide
@@ -94,16 +107,31 @@ function initCarousel() {
         });
     });
     
-    // Keyboard navigation
+    // Keyboard navigation (only when carousel or its controls are focused)
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-            stopAutoSlide();
-            startAutoSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-            stopAutoSlide();
-            startAutoSlide();
+        const carousel = document.querySelector('.carousel');
+        const activeElement = document.activeElement;
+        
+        // Check if focus is on carousel or its controls
+        const isCarouselFocused = carousel && (
+            carousel.contains(activeElement) ||
+            activeElement === prevBtn ||
+            activeElement === nextBtn ||
+            Array.from(indicators).includes(activeElement)
+        );
+        
+        if (isCarouselFocused) {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                nextSlide();
+                stopAutoSlide();
+                startAutoSlide();
+            }
         }
     });
     
@@ -160,12 +188,19 @@ function initMobileMenu() {
         // Toggle menu on hamburger click
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Update ARIA attributes
+            const isExpanded = navMenu.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
         });
         
         // Close menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
         
@@ -173,6 +208,8 @@ function initMobileMenu() {
         document.addEventListener('click', function(e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     }
@@ -263,6 +300,8 @@ function initNavbarBehavior() {
 // ===============================================
 function initFormValidation() {
     const form = document.querySelector('.contact-form');
+    const submitBtn = document.getElementById('submitBtn');
+    const formMessage = document.getElementById('formMessage');
     
     if (form) {
         form.addEventListener('submit', function(e) {
@@ -276,26 +315,64 @@ function initFormValidation() {
             
             // Basic validation
             if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
+                showFormMessage('Please fill in all required fields.', 'error');
                 return;
             }
             
             // Email validation
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
-                alert('Please enter a valid email address.');
+                showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
             
-            // Success message (in production, this would submit to a server)
-            alert(`Thank you, ${name}! We've received your inquiry and will get back to you soon.`);
+            // Show loading state
+            setLoadingState(true);
             
-            // Reset form
-            form.reset();
-            
-            // TODO: Implement actual form submission to backend
-            console.log('Form data:', { name, email, journey, message });
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Success
+                showFormMessage(`Thank you, ${name}! We've received your inquiry and will get back to you soon.`, 'success');
+                setLoadingState(false);
+                
+                // Reset form
+                form.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    hideFormMessage();
+                }, 5000);
+                
+                // TODO: Implement actual form submission to backend
+                console.log('Form data:', { name, email, journey, message });
+            }, 2000); // Simulate 2 second delay
         });
+    }
+    
+    function setLoadingState(isLoading) {
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        
+        if (isLoading) {
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+        } else {
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+        }
+    }
+    
+    function showFormMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+    }
+    
+    function hideFormMessage() {
+        formMessage.style.display = 'none';
+        formMessage.className = 'form-message';
     }
 }
 
